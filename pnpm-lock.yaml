@@ -29,6 +29,9 @@ importers:
       react-dom:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
+      recoil:
+        specifier: ^0.7.7
+        version: 0.7.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4
@@ -114,7 +117,7 @@ importers:
     dependencies:
       recoil:
         specifier: ^0.7.7
-        version: 0.7.7(react@19.2.3)
+        version: 0.7.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*
@@ -4119,10 +4122,12 @@ snapshots:
 
   readdirp@4.1.2: {}
 
-  recoil@0.7.7(react@19.2.3):
+  recoil@0.7.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
       hamt_plus: 1.0.2
       react: 19.2.3
+    optionalDependencies:
+      react-dom: 19.2.3(react@19.2.3)
 
   reflect.getprototypeof@1.0.10:
     dependencies:
