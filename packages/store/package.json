@@ -5,7 +5,7 @@
   "main": "index.js",
   "exports": {
     "./useBalance": "./src/hooks/useBalance.ts"
-},
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +16,7 @@
     "@repo/typescript-config": "workspace:*"
   },
   "dependencies": {
+    "jotai": "^2.18.0",
     "recoil": "^0.7.7"
   }
 }

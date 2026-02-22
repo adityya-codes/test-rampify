@@ -1,6 +1,4 @@
-import { atom } from "recoil";
+"use client"
+import { atom } from "jotai";
 
-export const balanceAtom = atom<number>({
-    key: "balance",
-    default: 0,
-})
+export const balanceAtom = atom(0); // default value 0

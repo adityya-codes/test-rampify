@@ -1,9 +1,8 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div>
-      
-    </div>
-  );
+"use client";
+import { useBalance } from "@repo/store/useBalance";
+export default function () {
+  const balance = useBalance();
+  return <div>
+    hi there {balance}
+  </div>
 }
