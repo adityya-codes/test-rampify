@@ -10,12 +10,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
-    "@repo/db" : "workspace:*"
+    "@repo/db": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
   },
   "dependencies": {
     "@types/express": "^5.0.6",
+    "@types/node": "^25.3.0",
     "esbuild": "^0.27.3",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "ts-node": "^10.9.2"
   }
 }
