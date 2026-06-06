@@ -6,6 +6,10 @@ async function main() {
   const aliceHashedPassword = await bcrypt.hash('alice', 10);
   const bobHashedPassword = await bcrypt.hash('bob', 10);
 
+  const jamesHashedPassword = await bcrypt.hash('james', 10);
+
+  const ronHashedPassword = await bcrypt.hash('ron', 10);
+
   const alice = await prisma.user.upsert({
     where: { number: '9999999999' },
     update: {},
@@ -54,7 +58,60 @@ async function main() {
       },
     },
   })
-  console.log({ alice, bob })
+
+  const james = await prisma.user.upsert({
+    where: { number: '7979797979' },
+    update: {},
+    create: {
+      number: '7979797979',
+      password: jamesHashedPassword,
+      name: 'james',
+      OnRampTransaction: {
+        create: {
+          startTime: new Date(),
+          status: "Success",
+          amount: 20000,
+          token: "1224545",
+          provider: "HDFC Bank",
+        },
+      },
+      Balance: {
+        create: {
+          amount: 20000,
+          locked: 0,
+        },
+      },
+    },
+  })
+
+  const ron = await prisma.user.upsert({
+    where: { number: '5757575757' },
+    update: {},
+    create: {
+      number: '5757575757',
+      password: ronHashedPassword,
+      name: 'alice',
+      OnRampTransaction: {
+        create: {
+          startTime: new Date(),
+          status: "Success",
+          amount: 20000,
+          token: "12244",
+          provider: "HDFC Bank",
+        },
+      },
+      Balance: {
+        create: {
+          amount: 20000,
+          locked: 0,
+        },
+      },
+    },
+  })
+
+
+
+  console.log({ alice, bob, james, ron })
 }
 main()
   .then(async () => {
